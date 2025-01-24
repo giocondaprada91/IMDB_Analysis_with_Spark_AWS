@@ -1,14 +1,29 @@
 # Analyzing IMDB Datasets
 
 ## Overview
-This project involves analyzing IMDB datasets sourced from Kaggle to answer business questions about movies, genres, job categories, and actors using **Apache Spark** on AWS EMR. The analysis was performed using a Jupyter Notebook, and the outputs are consolidated in the `Project_Analysis.ipynb` file.
+This project analyzes datasets related to movies, TV shows, actors, and ratings using **PySpark**, a distributed computing framework. It explores various questions and insights, including:
+
+- Identifying the highest and lowest-rated movies in the Harry Potter franchise.
+- Discovering movies featuring both Johnny Depp and Helena Bonham Carter.
+- Determining the most engaged TV series featuring David Tennant.
+- Exploring job categories and their prevalence in the dataset.
+
+The project leverages powerful data manipulation capabilities to join, filter, and aggregate across multiple datasets to provide meaningful insights.
 
 ---
 
-## Project Objectives
-1. **Provision a Spark Cluster**: Set up an AWS EMR cluster to process large datasets.
-2. **Analyze Data**: Use PySpark transformations and actions to answer analytical questions.
-3. **Demonstrate Skills**: Showcase proficiency in data analysis and infrastructure setup using cloud technologies.
+## Technologies Used
+- **Apache Spark (PySpark)**: For distributed data processing, joining large datasets, and performing complex queries efficiently.
+- **Python**: For scripting and additional analysis.
+- **Matplotlib**: For generating visualizations of insights (e.g., top job categories).
+
+---
+
+## Data Sources
+- **Name Basics (df1)**: Contains information about actors, actresses, and their professions.
+- **Title Basics (df2)**: Includes metadata about movies and TV shows, such as titles, release years, and genres.
+- **Title Principals (df3)**: Describes cast and crew details for each movie or show.
+- **Title Ratings (df4)**: Provides average ratings and vote counts for titles.
 
 ---
 
@@ -17,7 +32,8 @@ This project involves analyzing IMDB datasets sourced from Kaggle to answer busi
 Analyzing_IMDB_Datasets/
 ├── Project_Analysis.ipynb          # Jupyter Notebook with all analysis and code outputs
 ├── Project_Analysis.pdf            # PDF version of the notebook
-└── README.md                       # Project description and usage instructions
+├── README.md                       # Project description and usage instructions
+└── S3_Bucket_Data/                 # S3 bucket paths used in the analysis
 ```
 
 ---
@@ -53,22 +69,19 @@ Analyzing_IMDB_Datasets/
 
 ---
 
-## Technologies Used
-- **Apache Spark**: For distributed data processing.
-- **AWS EMR**: To provision a Spark cluster and handle computations.
-- **Python Libraries**: `pandas`, `matplotlib`, `pyspark`.
-- **Jupyter Notebook**: For interactive analysis and visualization.
+## Reproducibility
+### Environment Setup:
+To replicate this analysis:
+1. **Launch an AWS EMR Cluster**:
+   - Configure an EMR cluster with Apache Spark and Jupyter Notebook enabled.
+   - Use the EMR console to access the hosted Jupyter Notebook environment.
 
----
+2. **Prepare Data**:
+   - Upload the datasets to an S3 bucket and configure the cluster to access the data.
+   - Load the datasets into Spark DataFrames (`df1`, `df2`, `df3`, `df4`).
 
-## How to Reproduce
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/giocondaprada91/Analyzing_IMDB_Datasets.git
-   ```
-2. Set up an AWS EMR cluster and connect it to Jupyter Notebook.
-3. Update the S3 bucket paths in the `Project_Analysis.ipynb` file to access the datasets.
-4. Execute the notebook to reproduce the results.
+3. **Run the Analysis**:
+   - Execute the cells in `Project_Analysis.ipynb` to reproduce the results.
 
 ---
 
@@ -81,3 +94,4 @@ Analyzing_IMDB_Datasets/
 
 ## Acknowledgment
 This project was completed as part of the Data Mining for Business Analytics course at Baruch College. The datasets were sourced from Kaggle and analyzed using AWS EMR and PySpark.
+
