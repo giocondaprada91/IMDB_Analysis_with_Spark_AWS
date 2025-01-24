@@ -32,7 +32,6 @@ The project leverages powerful data manipulation capabilities to join, filter, a
 Analyzing_IMDB_Datasets/
 ├── Project_Analysis.ipynb          # Jupyter Notebook with all analysis and code outputs
 ├── Project_Analysis.pdf            # PDF version of the notebook
-├── README.md                       # Project description and usage instructions
 └── S3_Bucket_Data/                 # S3 bucket paths used in the analysis
 ```
 
